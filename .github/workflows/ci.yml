@@ -10,7 +10,7 @@ jobs:
       image: rust:1.68
     steps:
       - uses: actions/checkout@v3
-      - run: component add rustfmt
+      - run: rustup component add rustfmt
       - run: cargo fmt
   build:
     runs-on: ubuntu-latest
