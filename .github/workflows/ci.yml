@@ -1,0 +1,21 @@
+name: CI
+run-name: Continuous Integration
+
+on:
+	pull_request:
+		paths:
+			- 'src'
+
+jobs:
+	lint:
+		runs-on: ubuntu-latest
+		container:
+			image: rust:1.68
+		steps:
+			- cargo fmt
+	build:
+		runs-on: ubuntu-latest
+		container:
+			image: rust:1.68
+		steps:
+			- cargo build
